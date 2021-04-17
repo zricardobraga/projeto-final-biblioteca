@@ -1,5 +1,5 @@
 import {model, Schema} from mongoose;
-import {studensSchema} from './StudentsSchema';
+import {studentsSchema} from './StudentsSchema';
 import {booksSchema} from './BooksSchema';
 
 const lendingSchema = new Schema ({
@@ -8,7 +8,7 @@ const lendingSchema = new Schema ({
         require: [true, "O campo Data é obrigatório"],
     },
     books: [booksSchema],
-    students: [studensSchema],
+    students: [studentsSchema],
 },
 {
     timestamps: true,
