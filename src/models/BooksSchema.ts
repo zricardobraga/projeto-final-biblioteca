@@ -1,6 +1,6 @@
 import {Schema} from "mongoose";
 
-const bookSchema = new Schema(
+const booksSchema = new Schema(
     {
         cod: {
             type: String,
@@ -19,4 +19,4 @@ const bookSchema = new Schema(
     }, 
 );
 
-export {bookSchema};
+export {booksSchema};
