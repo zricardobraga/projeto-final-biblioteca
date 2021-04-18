@@ -8,7 +8,7 @@ const booksSchema = new Schema(
         },
         title: {
             type: String,
-            required: [true, "The field is mandatory"],
+            required: [true, "The field TITLE is mandatory"],
         },
         status: {
             type: String,

@@ -1,11 +1,11 @@
-import {model, Schema} from mongoose;
+import {model, Schema} from "mongoose";
 import {studentsSchema} from './StudentsSchema';
 import {booksSchema} from './BooksSchema';
 
 const lendingSchema = new Schema ({
     date: {
         type: Date,
-        require: [true, "O campo Data é obrigatório"],
+        require: [true, "The field DATE is mandatory"],
     },
     books: [booksSchema],
     students: [studentsSchema],
