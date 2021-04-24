@@ -1,0 +1,33 @@
+###
+POST http://localhost:3000/library/register
+Content-Type: application/json
+
+{   
+    "date": "2021/04/24",
+    "books": [
+        {
+            "cod": "01",
+            "title": "O Senhor dos Aneis - As Duas Torres",
+            "status": "AVAILABLE"
+        },
+
+        {
+            "cod": "03",
+            "title": "O Senhor dos Aneis - O Retorno do Rei",
+            "status": "AVAILABLE"
+        }
+    ],
+       
+}
+
+
+###
+POST http://localhost:3000/library/students/register
+Content-Type: application/json
+
+{
+    "name": "João da Silva",
+    "cpf": "123.456.789-10",
+    "address": "Rua X, 10, Curitiba/PR"
+}
+
