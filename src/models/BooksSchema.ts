@@ -1,4 +1,5 @@
-import {Schema} from "mongoose";
+import { Schema } from "mongoose";
+import { mongoose } from "../config/database";
 
 const booksSchema = new Schema(
     {
@@ -19,4 +20,4 @@ const booksSchema = new Schema(
     }, 
 );
 
-export {booksSchema};
+export default mongoose.model("Books", booksSchema);

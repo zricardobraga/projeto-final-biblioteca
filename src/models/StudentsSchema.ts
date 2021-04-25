@@ -1,4 +1,4 @@
-import {Schema} from "mongoose";
+import { Schema } from "mongoose";
 
 const studentsSchema = new Schema({
     name: {

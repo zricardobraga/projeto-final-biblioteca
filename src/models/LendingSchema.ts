@@ -1,6 +1,6 @@
-import {model, Schema} from "mongoose";
-import {studentsSchema} from './StudentsSchema';
-import {booksSchema} from './BooksSchema';
+import { model, Schema } from "mongoose";
+import { studentsSchema } from "./StudentsSchema";
+import booksSchema from "./BooksSchema";
 
 const lendingSchema = new Schema ({
     date: {
