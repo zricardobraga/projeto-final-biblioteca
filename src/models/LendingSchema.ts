@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import { studentsSchema } from "./StudentsSchema";
+import studentsSchema from "./StudentsSchema";
 import booksSchema from "./BooksSchema";
 
 const lendingSchema = new Schema ({
@@ -8,7 +8,9 @@ const lendingSchema = new Schema ({
         require: [true, "The field DATE is mandatory"],
     },
     books: [booksSchema],
-    students: [studentsSchema],
+    students: {
+        type: studentsSchema,
+    },
 },
 {
     timestamps: true,

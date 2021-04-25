@@ -1,4 +1,5 @@
 import { Schema } from "mongoose";
+import { mongoose } from "../config/database";
 
 const studentsSchema = new Schema({
     name: {
@@ -15,4 +16,4 @@ const studentsSchema = new Schema({
     }
 });
 
-export { studentsSchema };
+export default mongoose.model("Students", studentsSchema);
