@@ -12,7 +12,7 @@ const lendingSchema = new Schema ({
 
     returnDate: {
         type: Date,
-        default: Date.now
+        default: () => new Date(+new Date() + 5*24*60*60*1000)
     },
 
     studentName: {
@@ -25,7 +25,7 @@ const lendingSchema = new Schema ({
 
     booksTitles: [String],
 
-    booksCod: [String],
+    booksCod: [String]
 });
 
 export default mongoose.model("lending", lendingSchema);
