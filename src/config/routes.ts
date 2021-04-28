@@ -7,8 +7,8 @@ const router = Router();
 const lendingController = new LendingController();
 const studentsControllers = new StudentsController();
 
-// router.post("/library/register", lendingController.lendingRegister);
-router.post("/library/students/register", studentsControllers.studentsRegister);
+router.post("/library/lending/register", lendingController.lendingRegister);
+router.post("/library/students/register", studentsControllers.registerStudent);
 
 
 
