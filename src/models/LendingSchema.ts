@@ -12,7 +12,11 @@ const lendingSchema = new Schema ({
 
     returnDate: {
         type: Date,
+<<<<<<< HEAD
         default: "cincos dias após a data"
+=======
+        default: () => new Date(+new Date() + 5*24*60*60*1000)
+>>>>>>> d53e4e5a4d89a86c1ce743afa75ac648a8b7aba8
     },
 
     studentName: {

@@ -52,11 +52,19 @@ class LendingController {
         }
     }
 
+<<<<<<< HEAD
     async findLendingByCpf(request: Request, response: Response)
     {
         try {
             const { cpf } = request.params;
             const lendingFound = await LendingSchema.find({ cpf: cpf});
+=======
+    async findLendingById(request: Request, response: Response)
+    {
+        try {
+            const { id } = request.params;
+            const lendingFound = await LendingSchema.find({ _id: id});
+>>>>>>> d53e4e5a4d89a86c1ce743afa75ac648a8b7aba8
             response.status(200).json({
                 object: lendingFound,
                 msg: "Lending successfully found"
@@ -74,7 +82,11 @@ class LendingController {
     async editLending(request: Request, response: Response)
     {
         try {
+<<<<<<< HEAD
             await LendingSchema.findByIdAndUpdate(request.params.cpf, request.body);
+=======
+            await LendingSchema.findByIdAndUpdate(request.params.id, request.body);
+>>>>>>> d53e4e5a4d89a86c1ce743afa75ac648a8b7aba8
             response.status(200).json({
                 msg: "Lending successfully edited"
             });
@@ -91,7 +103,11 @@ class LendingController {
     async deleteLending(request: Request, response: Response)
     {
         try {
+<<<<<<< HEAD
             await LendingSchema.findByIdAndDelete(request.params.cpf);
+=======
+            await LendingSchema.findByIdAndDelete(request.params.id);
+>>>>>>> d53e4e5a4d89a86c1ce743afa75ac648a8b7aba8
             response.status(200).json({
                 msg: "Lending successfully deleted"
             })
