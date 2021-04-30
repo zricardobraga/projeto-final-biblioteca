@@ -1,21 +1,31 @@
-import { model, Schema } from "mongoose";
+import { Schema } from "mongoose";
+import { mongoose } from "../config/database";
 import studentsSchema from "./StudentsSchema";
 import booksSchema from "./BooksSchema";
 
 const lendingSchema = new Schema ({
-    date: {
+
+    lendingDate: {
         type: Date,
-        require: [true, "The field DATE is mandatory"],
+        default: Date.now
     },
-    books: [booksSchema],
-    students: {
-        type: studentsSchema,
+
+    returnDate: {
+        type: Date,
+        default: "cincos dias após a data"
     },
-},
-{
-    timestamps: true,
-}
 
-);
+    studentName: {
+        type: String
+    },
 
-export default model ("lending", lendingSchema);
+    studentCpf: {
+        type: String
+    },
+
+    booksTitles: [String],
+
+    booksCod: [String]
+});
+
+export default mongoose.model("lending", lendingSchema);

@@ -1,30 +1,29 @@
 import { Request, Response } from "express";
-import booksSchema from "../models/BooksSchema";
+import BooksSchema from "../models/BooksSchema";
 
 class BooksController {
 
-    async registerBook(request: Request, response: Response)
-    {
+    async registerBook(request: Request, response: Response) {
+        
         try {
-            const newBook = await booksSchema.create(request.body);
-            response.status(201).json({
-                object: newBook,
-                msg: "Successfully registered",
-            });
-        }
-        catch(error)
-        {
-            response.status(500).json({
-                object: error,
-                msg: "Register failed",
-            });
+            BooksSchema.count({cod: request.body.cod}, async function (err, count) {
+                if(count == 1){
+                    response.status(500).json({
+                        msg: "Book already registered"
+                    })
+                }else {
+                    const newBook = await BooksSchema.create(request.body);
+                    response.status(201).json(newBook);      
+                }
+            }); 
+        }catch (error) {
+            response.status(400).json(error);
         }
     }
 
-    async listBooks(request: Request, response: Response)
-    {
+    async listBooks(request: Request, response: Response) {
         try {
-            const booksList = await booksSchema.find();
+            const booksList = await BooksSchema.find();
             response.status(200).json({
                 object: booksList,
                 msg: "Successfully listed"
@@ -39,11 +38,10 @@ class BooksController {
         }
     }
 
-    async findBookById(request: Request, response: Response)
-    {
+    async findBookById(request: Request, response: Response) {
         try {
-            const { id } = request.params;
-            const bookFound = await booksSchema.find({ _id: id});
+            const { cod } = request.params;
+            const bookFound = await BooksSchema.find({ cod: cod});
             response.status(200).json({
                 object: bookFound,
                 msg: "Book successfully found"
@@ -58,10 +56,9 @@ class BooksController {
         }
     }
 
-    async editBook(request: Request, response: Response)
-    {
+    async editBook(request: Request, response: Response) {
         try {
-            await booksSchema.findByIdAndUpdate(request.params.id, request.body);
+            await BooksSchema.findByIdAndUpdate(request.params.cod, request.body);
             response.status(200).json({
                 msg: "Book successfully edited"
             });
@@ -75,10 +72,10 @@ class BooksController {
         }
     }
 
-    async deleteBook(request: Request, response: Response)
-    {
+    async deleteBook(request: Request, response: Response) {
         try {
-            await booksSchema.findByIdAndDelete(request.params.id);
+            const { cod } = request.params;
+            await BooksSchema.deleteOne({cod: cod});
             response.status(200).json({
                 msg: "Book successfully deleted"
             })
@@ -91,6 +88,6 @@ class BooksController {
             })
         }
     }
-};
+}
 
 export {BooksController};
