@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import studentsSchema from "../models/StudentsSchema";
 import booksSchema from "../models/BooksSchema";
-import LendingSchema from "../models/LendingSchema";
-import { StudentsController } from "./StudentsController";
+import BorrowSchema from "../models/BorrowSchema";
 
-class LendingController {
-    async lendingRegister (request: Request, response: Response){
+class BorrowController {
+
+    async borrowRegister (request: Request, response: Response){
         try {
                 studentsSchema.countDocuments({cpf: request.body.studentCpf}, async function(err, count)
                 {
@@ -15,12 +15,20 @@ class LendingController {
                         {
                             if(count == 1)
                             {
-                                await booksSchema.findOneAndUpdate({ cod: request.body.booksCod },{ status: request.body.status});
-                                const lending = await LendingSchema.create(request.body);
-                                response.status(200).json({
-                                    object: lending,
-                                    msg: "Successfully registered",
-                                });
+                                const { cod } = request.body.booksCod;
+                                const bookFound = await booksSchema.find({ cod: cod});
+                                const bookUnavailable = Object.values(bookFound).includes("UNAVAILABLE");
+
+                                if(bookUnavailable != null){
+                                    response.status(500).json({msg: "Book UNAVAILABLE"});
+                                }else{
+                                    await booksSchema.findOneAndUpdate({ cod: request.body.booksCod },{ status: request.body.status});
+                                    const lending = await BorrowSchema.create(request.body);
+                                    response.status(200).json({
+                                        object: lending,
+                                        msg: "Successfully registered",
+                                    });
+                                }
                             }else{response.status(500).json({error: err, msg: "Books does not exist"})}
                         });
                     }else{response.status(500).json({error: err, msg: "Student does not exist"})}
@@ -34,10 +42,10 @@ class LendingController {
         }
     }
 
-    async listLendings(request: Request, response: Response)
+    async listBorrows(request: Request, response: Response)
     {
         try {
-            const lendingsList = await LendingSchema.find();
+            const lendingsList = await BorrowSchema.find();
             response.status(200).json({
                 object: lendingsList,
                 msg: "Successfully listed"
@@ -52,41 +60,37 @@ class LendingController {
         }
     }
 
-<<<<<<< HEAD
-    async findLendingByCpf(request: Request, response: Response)
-    {
-        try {
-            const { cpf } = request.params;
-            const lendingFound = await LendingSchema.find({ cpf: cpf});
-=======
-    async findLendingById(request: Request, response: Response)
+    async findBorrowById(request: Request, response: Response)
     {
         try {
             const { id } = request.params;
-            const lendingFound = await LendingSchema.find({ _id: id});
->>>>>>> d53e4e5a4d89a86c1ce743afa75ac648a8b7aba8
-            response.status(200).json({
-                object: lendingFound,
-                msg: "Lending successfully found"
-            });
+            const borrowFound = await BorrowSchema.findOne({ _id: id});
+
+            if(borrowFound)
+            {
+                response.status(200).json({
+                    object: borrowFound,
+                    msg: "Borrow successfully found"
+                });
+            } else {
+                response.status(404).json({
+                    msg: "Borrow not found"
+                });
+            }
         }
         catch(error)
         {
             response.status(404).json({
                 object: error,
-                msg: "Lending not found"
+                msg: "Borrow not found"
             });
         }
     }
 
-    async editLending(request: Request, response: Response)
+    async editBorrow(request: Request, response: Response)
     {
         try {
-<<<<<<< HEAD
-            await LendingSchema.findByIdAndUpdate(request.params.cpf, request.body);
-=======
-            await LendingSchema.findByIdAndUpdate(request.params.id, request.body);
->>>>>>> d53e4e5a4d89a86c1ce743afa75ac648a8b7aba8
+            await BorrowSchema.findByIdAndUpdate(request.params.id, request.body);
             response.status(200).json({
                 msg: "Lending successfully edited"
             });
@@ -100,14 +104,10 @@ class LendingController {
         }
     }
 
-    async deleteLending(request: Request, response: Response)
+    async deleteBorrow(request: Request, response: Response)
     {
         try {
-<<<<<<< HEAD
-            await LendingSchema.findByIdAndDelete(request.params.cpf);
-=======
-            await LendingSchema.findByIdAndDelete(request.params.id);
->>>>>>> d53e4e5a4d89a86c1ce743afa75ac648a8b7aba8
+            await BorrowSchema.findByIdAndDelete(request.params.id);
             response.status(200).json({
                 msg: "Lending successfully deleted"
             })
@@ -120,7 +120,6 @@ class LendingController {
             })
         }
     }
-
 }
-export { LendingController };
+export { BorrowController };
 

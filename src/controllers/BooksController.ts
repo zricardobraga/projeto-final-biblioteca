@@ -38,7 +38,7 @@ class BooksController {
         }
     }
 
-    async findBookById(request: Request, response: Response) {
+    async findBookByCod(request: Request, response: Response) {
         try {
             const { cod } = request.params;
             const bookFound = await BooksSchema.find({ cod: cod});
@@ -58,7 +58,7 @@ class BooksController {
 
     async editBook(request: Request, response: Response) {
         try {
-            await BooksSchema.findByIdAndUpdate(request.params.cod, request.body);
+            await BooksSchema.findByIdAndUpdate(request.params.id, request.body);
             response.status(200).json({
                 msg: "Book successfully edited"
             });
@@ -74,8 +74,7 @@ class BooksController {
 
     async deleteBook(request: Request, response: Response) {
         try {
-            const { cod } = request.params;
-            await BooksSchema.deleteOne({cod: cod});
+            await BooksSchema.findByIdAndDelete(request.params.id);
             response.status(200).json({
                 msg: "Book successfully deleted"
             })
@@ -90,4 +89,4 @@ class BooksController {
     }
 }
 
-export {BooksController};
+export { BooksController };
