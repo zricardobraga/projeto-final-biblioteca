@@ -19,11 +19,11 @@ router.get("/library/books/search/:cod", booksController.findBookByCod);
 router.post("/library/books/edit/:id", booksController.editBook);
 router.post("/library/books/delete/:id", booksController.deleteBook);
 
-const lendingController = new BorrowController();
-router.post("/library/borrow/register", lendingController.borrowRegister);
-router.get("/library/borrow/list", lendingController.listBorrows);
-router.get("/library/borrow/search/:id", lendingController.findBorrowById);
-router.post("/library/borrow/edit/:id", lendingController.editBorrow);
-router.post("/library/borrow/delete/:id", lendingController.deleteBorrow);
+const borrowController = new BorrowController();
+router.post("/library/borrow/register", borrowController.borrowRegister);
+router.get("/library/borrow/list", borrowController.listBorrows);
+router.get("/library/borrow/search/:id", borrowController.findBorrowById);
+router.post("/library/borrow/edit/:id", borrowController.editBorrow);
+router.post("/library/borrow/delete/:id", borrowController.deleteBorrow);
 
 export { router };

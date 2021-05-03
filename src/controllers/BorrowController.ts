@@ -19,15 +19,13 @@ class BorrowController {
                                 const bookFound = await booksSchema.find({ cod: cod});
                                 const bookUnavailable = Object.values(bookFound).includes("UNAVAILABLE");
 
-                                
-
                                 if(bookUnavailable == true){
                                     response.status(500).json({msg: "Book UNAVAILABLE"});
                                 }else{
                                     await booksSchema.findOneAndUpdate({ cod: request.body.booksCod },{ status: "UNAVAILABLE"});
-                                    const lending = await BorrowSchema.create(request.body);
+                                    const borrow = await BorrowSchema.create(request.body);
                                     response.status(200).json({
-                                        object: lending,
+                                        object: borrow,
                                         msg: "Successfully registered",
                                     });
                                 }
@@ -47,9 +45,9 @@ class BorrowController {
     async listBorrows(request: Request, response: Response)
     {
         try {
-            const lendingsList = await BorrowSchema.find();
+            const borrowsList = await BorrowSchema.find();
             response.status(200).json({
-                object: lendingsList,
+                object: borrowsList,
                 msg: "Successfully listed"
             });
         }
@@ -94,7 +92,7 @@ class BorrowController {
         try {
             await BorrowSchema.findByIdAndUpdate(request.params.id, request.body);
             response.status(200).json({
-                msg: "Lending successfully edited"
+                msg: "Borrow successfully edited"
             });
         }
         catch(error)
@@ -111,7 +109,7 @@ class BorrowController {
         try {
             await BorrowSchema.findByIdAndDelete(request.params.id);
             response.status(200).json({
-                msg: "Lending successfully deleted"
+                msg: "Borrow successfully deleted"
             })
         }
         catch(error)
