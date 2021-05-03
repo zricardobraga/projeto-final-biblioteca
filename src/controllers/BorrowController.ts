@@ -19,10 +19,12 @@ class BorrowController {
                                 const bookFound = await booksSchema.find({ cod: cod});
                                 const bookUnavailable = Object.values(bookFound).includes("UNAVAILABLE");
 
-                                if(bookUnavailable != null){
+                                
+
+                                if(bookUnavailable == true){
                                     response.status(500).json({msg: "Book UNAVAILABLE"});
                                 }else{
-                                    await booksSchema.findOneAndUpdate({ cod: request.body.booksCod },{ status: request.body.status});
+                                    await booksSchema.findOneAndUpdate({ cod: request.body.booksCod },{ status: "UNAVAILABLE"});
                                     const lending = await BorrowSchema.create(request.body);
                                     response.status(200).json({
                                         object: lending,
