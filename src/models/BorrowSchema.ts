@@ -14,30 +14,18 @@ const borrowSchema = new Schema ({
         type: Date,
         default: () => new Date(+new Date() + 5*24*60*60*1000)
     },
-
-    // studentName: {
-    //     type: String
-    // },
-
-    // studentCpf: {
-    //     type: String
-    // },
-
-    // booksTitles: [String],
-
-    // booksCod: [String]
     
     studentBorrow:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'StudentsSchema',
+        ref: 'Student',
         require: true
     },
 
-    booksBorrow:{
+    booksBorrow:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'BooksSchema',
+        ref: 'Book',
         require: true
-    },
+    }],
 
 });
 

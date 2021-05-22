@@ -2,45 +2,30 @@ import { Request, Response } from "express";
 import studentsSchema from "../models/StudentsSchema";
 import booksSchema from "../models/BooksSchema";
 import BorrowSchema from "../models/BorrowSchema";
-import BooksSchema from "../models/BooksSchema";
+import { StudentsController } from "./StudentsController";
 
 class BorrowController {
 
     async borrowRegister (request: Request, response: Response){
         try {
-                // studentsSchema.countDocuments({cpf: request.body.studentCpf}, async function(err, count)
-                // {
-                //     if(count == 1)
-                //     {
-                //         booksSchema.countDocuments({cod: request.body.booksCod}, async function(err, count)
-                //         {
-                //             if(count == 1)
-                //             {
-                //                 const { cod } = request.body.booksCod;
-                //                 const bookFound = await booksSchema.find({ cod: cod});
-                //                 const bookUnavailable = Object.values(bookFound).includes("UNAVAILABLE");
 
-                //                 if(bookUnavailable == true){
-                //                     response.status(500).json({msg: "Book UNAVAILABLE"});
-                //                 }else{
-                //                     await booksSchema.findOneAndUpdate({ cod: request.body.booksCod },{ status: "UNAVAILABLE"});
-                //                     const borrow = await BorrowSchema.create(request.body);
-                //                     response.status(200).json({
-                //                         object: borrow,
-                //                         msg: "Successfully registered",
-                //                     });
-                //                 }
-                //             }else{response.status(500).json({error: err, msg: "Books does not exist"})}
-                //         });
-                //     }else{response.status(500).json({error: err, msg: "Student does not exist"})}
-                //});
-
-                await BooksSchema.findOneAndUpdate({cod: request.body.booksBorrow}, {status: "UNAVAILABLE"});
-                const borrow = await BorrowSchema.create(request.body);
-                response.status(200).json({
-                    object: borrow,
-                    msg: "Successfully registered",
-                });
+            //TODO: Validate if the book has no UNAVAILABLE status before creating the borrow
+            
+            // const bookFound = await booksSchema.findById({_id: request.body.booksBorrow});
+            // const exists = Object.values(bookFound).includes("UNAVAILABLE");
+            // if(exists)
+            // {
+            //     response.status(500).json({msg: "Book UNAVAILABLE"});
+            // }
+            
+            await booksSchema.findOneAndUpdate({_id: request.body.booksBorrow}, {status: "UNAVAILABLE"});
+            
+            const borrow = await BorrowSchema.create(request.body);
+            response.status(200).json({
+                object: borrow,
+                msg: "Successfully registered"
+            });
+            
         }
         catch (error) {
             response.status(500).json({

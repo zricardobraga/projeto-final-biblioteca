@@ -6,7 +6,7 @@ class BooksController {
     async registerBook(request: Request, response: Response) {
         
         try {
-            BooksSchema.count({cod: request.body.cod}, async function (err, count) {
+            BooksSchema.countDocuments({cod: request.body.cod}, async function (err, count) {
                 if(count == 1){
                     response.status(500).json({
                         msg: "Book already registered"
