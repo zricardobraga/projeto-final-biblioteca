@@ -16,4 +16,4 @@ const studentsSchema = new Schema({
     }
 });
 
-export default mongoose.model("students", studentsSchema);
+export default mongoose.model("Student", studentsSchema);

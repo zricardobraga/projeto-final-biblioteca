@@ -1,7 +1,5 @@
 import { Schema } from "mongoose";
 import { mongoose } from "../config/database";
-import studentsSchema from "./StudentsSchema";
-import booksSchema from "./BooksSchema";
 
 const borrowSchema = new Schema ({
 
@@ -16,16 +14,16 @@ const borrowSchema = new Schema ({
     },
     
     studentBorrow:{
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Student',
         require: true
     },
 
-    booksBorrow:[{
-        type: mongoose.Schema.Types.ObjectId,
+    booksBorrow:{
+        type: Schema.Types.ObjectId,
         ref: 'Book',
         require: true
-    }],
+    },
 
 });
 
