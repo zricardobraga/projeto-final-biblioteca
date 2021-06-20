@@ -2,8 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\API",
-    "\\API\\controllers"
+    "\\API\\controllers",
+    "\\WEB",
+    "\\WEB\\src",
+    "\\WEB\\src\\app",
+    "\\WEB\\src\\app\\components",
+    "\\WEB\\src\\app\\components\\views",
+    "\\WEB\\src\\app\\models",
+    "\\WEB\\src\\app\\services"
   ],
-  "SelectedNode": "\\API\\controllers\\BorrowController.ts",
+  "SelectedNode": "\\WEB\\src\\app\\components\\views\\books\\list\\list.component.ts",
   "PreviewInSolutionExplorer": false
 }

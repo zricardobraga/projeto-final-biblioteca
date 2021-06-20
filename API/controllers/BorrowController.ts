@@ -9,15 +9,23 @@ class BorrowController {
         try {
 
             const booksArray = request.body.booksBorrow;
-            const getBook = await booksSchema.findOne({_id: booksArray});
-            const getBookStatus = getBook.isAvailable;
+            const booksFormated = Array.from(booksArray);
+            let i = 0;
 
-            if(getBookStatus == false)
-            {
-                response.status(500).json({msg: "Book UNAVAILABLE"});
+            for(const book in booksFormated){
+
+                const getBook = await booksSchema.findOne({_id: booksFormated[i]});
+                const getBookStatus = getBook.isAvailable;
+
+                if(getBookStatus == false)
+                {
+                    response.status(500).json({msg: "Book UNAVAILABLE"});
+                }
+
+                await booksSchema.findOneAndUpdate({_id: booksFormated[i]}, {isAvailable: "false"});
+
+                i++;
             }
-
-            await booksSchema.findOneAndUpdate({_id: request.body.booksBorrow}, {isAvailable: "false"});
 
             const borrow = await BorrowSchema.create(request.body);
 
@@ -124,15 +132,22 @@ class BorrowController {
         try {
             const { id } = request.params;
             const borrowFound = await BorrowSchema.findOne({ _id: id});
-    
-            const book = borrowFound.booksBorrow;
-            const getBook = await booksSchema.findOne({_id: book});
-            await booksSchema.findOneAndUpdate({_id: book}, {isAvailable: "true"});
+
+            const booksArray = borrowFound.booksBorrow;
+            const booksFormated = Array.from(booksArray);
+            let i = 0;
+
+            for(const book in booksFormated){
+
+                await booksSchema.findOneAndUpdate({_id: booksFormated[i]}, {isAvailable: "true"});
+
+                i++;
+            }
     
             await BorrowSchema.findByIdAndDelete(request.params.id);
     
             response.status(200).json({
-                msg: "Book returned!"
+                msg: "Books returned!"
             });
         }catch(error)
         {

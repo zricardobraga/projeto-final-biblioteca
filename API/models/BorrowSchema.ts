@@ -19,11 +19,11 @@ const borrowSchema = new Schema ({
         require: true
     },
 
-    booksBorrow:{
+    booksBorrow:[{
         type: Schema.Types.ObjectId,
         ref: 'Book',
         require: true
-    },
+    }],
 
 });
 

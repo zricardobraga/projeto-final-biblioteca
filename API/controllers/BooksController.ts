@@ -24,10 +24,7 @@ class BooksController {
     async listBooks(request: Request, response: Response) {
         try {
             const booksList = await BooksSchema.find();
-            response.status(200).json({
-                object: booksList,
-                msg: "Successfully listed"
-            });
+            response.status(200).json(booksList);
         }
         catch(error)
         {
