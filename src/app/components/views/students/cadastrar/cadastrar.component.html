@@ -1,1 +1,17 @@
-<p>cadastrar works!</p>
+<mat-card>
+    <mat-card-title>
+        Novo estudante
+    </mat-card-title>
+    <mat-card-content>
+        <mat-form-field>
+            <mat-label for="nome">Nome do estudante</mat-label>
+            <input matInput placeholder="Digite o nome do estudante" type="text" name="nome" [(ngModel)]="name">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="cadastrar()">Cadastrar</button>
+        <a mat-raised-button color="accent" routerLink="/library/students/list">Listar estudantes</a>
+    </mat-card-content>
+</mat-card>
+
+
+

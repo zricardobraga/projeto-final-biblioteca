@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Students } from 'src/app/models/Students';
-import { HttpClient } from "@angular/common/http"
+import { Student } from 'src/app/models/Student';
+import { StudentsService } from 'src/app/services/students.service';
 
 @Component({
   selector: 'app-listar',
@@ -9,20 +9,16 @@ import { HttpClient } from "@angular/common/http"
 })
 export class ListarComponent implements OnInit {
 
-  students : Students[] = [];
+  students: Student[] = [];
 
-  constructor(private http: HttpClient) {
-    http.get<Students[]>("http://localhost:3000/library/students/list").subscribe((lista) => {
-      this.students = lista;
-      console.log(this.students);
-    });
-   }
+  constructor(private service: StudentsService) {}
 
   ngOnInit(): void {
-    
     //Carregar os estudantes que estão na API
+    this.service.listar().subscribe((students) => {
+      this.students = students;
+      console.log(this.students);
+    });
   }
-
-  
 
 }

@@ -1,1 +1,16 @@
-{{students}}
+<a routerLink="/library/students/register">Cadastrar estudante</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome do estudante</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{student._id}}</td>
+            <td>{{student.name}}</td>
+        </tr>
+    </tbody>
+</table>
