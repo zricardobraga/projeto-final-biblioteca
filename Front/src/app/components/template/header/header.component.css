@@ -1,15 +1,12 @@
-.header-toolbar {
+.mat-elevation-z6 {
   background-color: #912437;
-  height: 60px;
-  position: fixed;
-  top: 0;
-  z-index: 5;
+}
+
+.link-toolbar {
+  text-decoration: none;
+  color: #fff;
 }
 
 .example-spacer {
   flex: 1 1 auto;
-}
-
-.logo {
-  width: 150px;
 }

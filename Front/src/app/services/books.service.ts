@@ -15,4 +15,8 @@ export class BooksService {
   list(): Observable<Books[]> {
     return this.http.get<Books[]>(`${this.baseUrl}library/books/list`);
   }
+
+  register(book: Books): Observable<Books> {
+    return this.http.post<Books>(`${this.baseUrl}library/books/register`, book);
+  }
 }

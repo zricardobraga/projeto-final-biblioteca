@@ -1,1 +1,29 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="container">
+    <mat-sidenav mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <mat-list-item>
+                <mat-icon matListIcon>book</mat-icon>
+                <a class="itens" routerLink="register">
+                    Livros
+                </a>  
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListIcon>how_to_reg</mat-icon>
+                <a routerLink="register">
+                    Estudantes
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListIcon>library_add</mat-icon>
+                <a routerLink="register">
+                    Emprestimos
+                </a>
+            </mat-list-item>
+          </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+

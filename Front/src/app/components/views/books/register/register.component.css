@@ -1,0 +1,13 @@
+mat-card-content {
+  padding: 5px;
+}
+
+.example-full-width {
+  width: 60%;
+  display: block;
+}
+
+.button_list {
+  display: flex;
+  justify-content: flex-end;
+}
