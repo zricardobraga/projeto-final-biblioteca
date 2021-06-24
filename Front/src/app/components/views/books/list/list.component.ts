@@ -11,7 +11,7 @@ import { BooksService } from 'src/app/services/books.service';
 export class ListComponent implements OnInit {
 
   book!: MatTableDataSource<Books>;
-  displayedColumns: string[] = ['id', 'cod', 'title', 'acoes'];
+  displayedColumns: string[] = [ 'status', 'cod', 'title', 'acoes'];
 
   //book: Books[] = [];
 

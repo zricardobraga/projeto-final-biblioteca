@@ -1,11 +1,12 @@
 <mat-card>
-  <a class="button_list" routerLink="list">
-    <button mat-raised-button color="primary">Livros Cadastrados</button>
-  </a>
-
-  <mat-card-title>
-    Novo Livro
-  </mat-card-title>
+  <div class="button_list">
+    <mat-card-title>
+      Novo Livro
+    </mat-card-title>
+    <a>
+      <button mat-raised-button color="primary" routerLink="list">Livros Cadastrados</button>
+    </a>
+  </div>
 
   <mat-card-content>
     <mat-form-field class="example-full-width" >
@@ -17,16 +18,7 @@
       <mat-label for="title">Titulo</mat-label>
       <input matInput placeholder="Titulo" type="text" name="title" [(ngModel)]="book.title"/>
     </mat-form-field>
-
-    <!-- <mat-form-field class="example-full-width">
-      <mat-label>Status</mat-label>
-      <mat-select>
-        <mat-option value="AVAILABLE">Disponivel</mat-option>
-        <mat-option value="UNVAILABLE">Indisponivel</mat-option>
-      </mat-select>
-    </mat-form-field> -->
   </mat-card-content>
 
   <button mat-raised-button color="primary" (click)="register()">Cadastrar</button>
-
 </mat-card>
