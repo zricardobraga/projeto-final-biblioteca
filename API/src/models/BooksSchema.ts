@@ -11,12 +11,11 @@ const booksSchema = new Schema(
             type: String,
             required: [true, "The field TITLE is mandatory"],
         },
-        status: {
-            type: String,
+        isAvailable: {
+            type: Boolean,
             required: [true, "The field STATUS is mandatory"],
-            enum: ["AVAILABLE", "UNAVAILABLE"],
-            uppercase:true,
-        },
+            default: true,
+        }
     }, 
 );
 
