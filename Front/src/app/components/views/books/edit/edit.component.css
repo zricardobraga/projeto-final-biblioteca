@@ -6,9 +6,6 @@ mat-card-content {
   width: 60%;
   display: block;
 }
-
-.button_list {
-  display: flex;
-  justify-content: space-between;
-  text-decoration: none;
+.margin_cancelar {
+  margin-left: 10px;
 }

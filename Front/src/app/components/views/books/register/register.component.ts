@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Books } from 'src/app/models/Books';
 import { BooksService } from 'src/app/services/books.service';
 
@@ -9,27 +10,17 @@ import { BooksService } from 'src/app/services/books.service';
 })
 export class RegisterComponent implements OnInit {
 
-  // data!: string;
-  // codbook! : string;
-  // titlebook! : string;
-  // statusbook! : string;
-
   book: Books = new Books();
 
 
-  constructor(private service: BooksService) { }
+  constructor(private service: BooksService, private router: Router) { }
 
   ngOnInit(): void {}
 
   register(): void {
     this.service.register(this.book).subscribe((book) => {
-      console.log(book);
+      this.router.navigate(['register/list']);
     });
-    // let book = new Books();
-    // book.cod = this.codbook;
-    // book.title = this.titlebook;
-    // book.status = this.statusbook;
-
   }
-
 }
+

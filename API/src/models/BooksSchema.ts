@@ -16,6 +16,7 @@ const booksSchema = new Schema(
             required: [true, "The field STATUS is mandatory"],
             default: true,
         }
+        },
     }, 
 );
 
