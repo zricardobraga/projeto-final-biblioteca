@@ -1,3 +1,6 @@
+import { BorrowListComponent } from './components/views/borrow/borrowList/BorrowList.component';
+import { BorrowEditComponent } from './components/views/borrow/borrowEdit/BorrowEdit.component';
+import { BorrowRegisterComponent } from './components/views/borrow/borrowRegister/borrowRegister.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -35,6 +38,9 @@ import { EditComponent } from './components/views/books/edit/edit.component';
     ListComponent,
     RegisterComponent,
     EditComponent,
+    BorrowRegisterComponent,
+    BorrowEditComponent,
+    BorrowListComponent
   ],
   imports: [
     BrowserModule,
