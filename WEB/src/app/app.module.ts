@@ -19,6 +19,7 @@ import { CadastrarComponent } from './components/views/students/cadastrar/cadast
 import { HeaderComponent } from './components/template/header/header.component';
 import { ContentComponent } from './components/template/content/content.component';
 import { NavComponent } from './components/template/nav/nav.component';
+import { EditarComponent } from './components/views/students/editar/editar.component';
 
 
 
@@ -30,6 +31,7 @@ import { NavComponent } from './components/template/nav/nav.component';
     HeaderComponent,
     ContentComponent,
     NavComponent,
+    EditarComponent,
   ],
   imports: [
     BrowserModule,

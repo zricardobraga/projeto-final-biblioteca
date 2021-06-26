@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-title>
+        Editar estudante
+    </mat-card-title>
+    <mat-card-content>
+        <mat-form-field>
+            <mat-label for="nome">Nome do estudante</mat-label>
+            <input matInput placeholder="Digite o nome do estudante" type="text" name="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="cpf">CPF</mat-label>
+            <input matInput placeholder="Digite o cpf do estudante" type="text" name="cpf">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="endereco">Endereço</mat-label>
+            <input matInput placeholder="Digite o endereço do estudante" type="text" name="endereco">
+        </mat-form-field>
+        <br>
+        <a routerLink="/library/students/list"><button mat-raised-button color="primary">Salvar</button></a>
+        <a mat-raised-button color="accent" routerLink="/library/students/list">Listar estudantes</a>
+    </mat-card-content>
+</mat-card>
+
+
+
+

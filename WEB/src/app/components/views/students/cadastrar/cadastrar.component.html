@@ -7,8 +7,16 @@
             <mat-label for="nome">Nome do estudante</mat-label>
             <input matInput placeholder="Digite o nome do estudante" type="text" name="nome" [(ngModel)]="name">
         </mat-form-field>
+        <mat-form-field>
+            <mat-label for="nome">CPF</mat-label>
+            <input matInput placeholder="Digite o cpf do estudante" type="text" name="nome" [(ngModel)]="name">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="nome">Endereço</mat-label>
+            <input matInput placeholder="Digite o endereço do estudante" type="text" name="nome" [(ngModel)]="name">
+        </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" (click)="cadastrar()">Cadastrar</button>
+        <a routerLink="/library/students/list"><button mat-raised-button color="primary" (click)="cadastrar()">Cadastrar</button></a>
         <a mat-raised-button color="accent" routerLink="/library/students/list">Listar estudantes</a>
     </mat-card-content>
 </mat-card>
