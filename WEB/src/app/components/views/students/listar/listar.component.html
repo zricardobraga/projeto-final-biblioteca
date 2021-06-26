@@ -5,12 +5,16 @@
         <tr>
             <th>#</th>
             <th>Nome do estudante</th>
+            <th>CPF</th>
+            <th>Endereço</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let student of students">
             <td>{{student._id}}</td>
             <td>{{student.name}}</td>
+            <td>{{student.cpf}}</td>
+            <td>{{student.address}}</td>
         </tr>
     </tbody>
 </table>

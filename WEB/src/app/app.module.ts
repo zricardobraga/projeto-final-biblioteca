@@ -18,9 +18,6 @@ import { ListarComponent } from './components/views/students/listar/listar.compo
 import { CadastrarComponent } from './components/views/students/cadastrar/cadastrar.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { ContentComponent } from './components/template/content/content.component';
-import { FooterComponent } from './components/template/footer/footer.component';
-import { EditarComponent } from './components/views/students/editar/editar.component';
-import { DeletarComponent } from './components/views/students/deletar/deletar.component';
 import { NavComponent } from './components/template/nav/nav.component';
 
 
@@ -32,9 +29,6 @@ import { NavComponent } from './components/template/nav/nav.component';
     CadastrarComponent,
     HeaderComponent,
     ContentComponent,
-    FooterComponent,
-    EditarComponent,
-    DeletarComponent,
     NavComponent,
   ],
   imports: [
