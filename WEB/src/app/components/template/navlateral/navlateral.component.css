@@ -1,0 +1,18 @@
+.container {
+  position: absolute;
+  left: 0;
+}
+
+.sidenav {
+  text-align: center;
+  background: #912437;
+  padding: 15px;
+  padding-top: 45px;
+  width: 140px;
+}
+
+.nav-list a {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
