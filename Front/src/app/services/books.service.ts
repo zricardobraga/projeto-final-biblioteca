@@ -24,17 +24,13 @@ export class BooksService {
     return this.http.post<Books>(`${this.baseUrl}library/books/register`, book);
   }
 
-  edit(book: Books): Observable<Books> {
-    return this.http.put<Books>(`${this.baseUrl}library/books/edit`, book);
-  }
-
   delete(_id: string): Observable<Books[]> {
     return this.http.delete<Books[]>(`${this.baseUrl}library/books/delete/${_id}`);
-  }
+    }
+
+    //edit(id: string, request: Books): Observable<Books> {
+    //    const path = `${this.baseUrl}library/books/edit/${id}`;
+    //    return this.http.put<Books>(path, request);
+    //}
 }
 
-  edit(id: string, request: Books) : Observable<Books> {
-    const path = `${this.baseUrl}library/books/edit/${id}`;
-    return this.http.put<Books>(path, request);
-  }
-}
