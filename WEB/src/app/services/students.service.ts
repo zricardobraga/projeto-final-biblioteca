@@ -19,4 +19,9 @@ export class StudentsService {
   cadastrar(student: Student): Observable<Student>{
     return this.http.post<Student>(`${this.baseURL}library/students/register`, student);
   }
-}
+
+  editar(student: Student): Observable<Student>{
+    return this.http.put<Student>(`${this.baseURL}library/students/edit/:id`, student);
+ }
+} 
+
