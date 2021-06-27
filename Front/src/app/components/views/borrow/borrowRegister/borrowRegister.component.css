@@ -1,0 +1,36 @@
+mat-card-content{
+    padding: 16px;
+}
+
+.card{
+    width: 100%;
+}
+
+mat-grid-tile{
+    width: 100%;
+}
+
+.student{
+    flex: 1;
+    margin-right: 8px;
+}
+.books{
+    flex: 1;
+    margin-left: 8px;
+}
+
+.content-book{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.content-student{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+table{
+    margin-top: 16px;
+    width: 100%;
+}

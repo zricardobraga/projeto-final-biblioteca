@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Books } from 'src/app/models/Books';
+import { Book } from 'src/app/models/Book';
 import { BooksService } from 'src/app/services/books.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { BooksService } from 'src/app/services/books.service';
 })
 export class ListComponent implements OnInit {
 
-  book!: MatTableDataSource<Books>;
+  book!: MatTableDataSource<Book>;
   displayedColumns: string[] = [ 'status', 'cod', 'title', 'acoes'];
 
   //book: Books[] = [];
@@ -19,7 +19,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.list().subscribe((book) => {
-      this.book = new MatTableDataSource<Books>(book);
+      this.book = new MatTableDataSource<Book>(book);
       //this.book = book;
       console.log(book);
      });

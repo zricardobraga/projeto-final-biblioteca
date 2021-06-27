@@ -1,27 +1,60 @@
 <mat-card>
     <mat-card-title>Novo empréstimo</mat-card-title>
+    <mat-card-content>
+        <div class="student">
+            <mat-card>
+                <mat-card-title>Informar o nome do estudante</mat-card-title>
+                <mat-card-content>
+                    <div class="content-student">
+                        <mat-form-field appearance="fill">
+                            <mat-label>CPF do estudante</mat-label>
+                            <input matInput placeholder="CPF" type="text">
+                        </mat-form-field>
+                        <button mat-raised-button color="primary">Adicionar estudante</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    
+        <div class="book">
+            <mat-card>
+                <mat-card-title>Informar os Livros que serão emprestados</mat-card-title>
+                <mat-card-content>
+                    <div class="content-book">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Código do Livro</mat-label>
+                            <input matInput placeholder="Código do Livro" type="text" name="data"  [(ngModel)]="bookCod">
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" (click)="addBook()">Adicionar Livro</button>
+                    </div>
+                    <table mat-table [dataSource]="books">
+                        <ng-container matColumnDef="cod">
+                            <th mat-header-cell *matHeaderCellDef>Cód.</th>
+                            <td mat-cell *matCellDef="let book">{{ book.cod }}</td>
+                        </ng-container>
+                        
+                        <ng-container matColumnDef="titulo">
+                            <th mat-header-cell *matHeaderCellDef>Título</th>
+                            <td mat-cell *matCellDef="let book">{{ book.Title }}</td>
+                        </ng-container>
+                        
+                        <ng-container matColumnDef="status">
+                            <th mat-header-cell *matHeaderCellDef>Status</th>
+                            <td mat-cell *matCellDef="let book">{{ book.isAvailable == 1 ? "Disponivel" : "Indisponivel" }}</td>
+                        </ng-container>
+                        
+                        <tr mat-header-row *matHeaderRowDef="bookCollumn"></tr>
+                        <tr  tr mat-row *matRowDef="let row; columns: bookCollumn"></tr>
+                    </table>
+                    
+                </mat-card-content>
+            </mat-card>
+        </div>
 
-    <div class="book">
-        <mat-card>
-            <mat-card-title>Cadastrar Livro(s) ao empréstimo</mat-card-title>
-            <mat-card-content>
-                <div class="content-book">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Código do Livro</mat-label>
-                        <input matInput placeholder="Código do Livro" type="text">
-                    </mat-form-field>
-                    <button mat-raised-button color="primary">Adicionar Livro</button>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-
-    <div class="student">
-        <mat-card>
-            <mat-card-title>
-                
-            </mat-card-title>
-        </mat-card>
-    </div>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">Cadastrar</button>
+            <a mat-stroked-button routerLink="borrowList"> Listar empréstimos </a>
+        </mat-card-actions>
+    </mat-card-content>
 </mat-card>
 

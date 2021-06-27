@@ -1,4 +1,4 @@
-export class Books { 
+export class Book { 
     _id?: string;
     cod!: string;
     title!: string;

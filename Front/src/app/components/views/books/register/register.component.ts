@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Books } from 'src/app/models/Books';
+import { Book } from 'src/app/models/Book';
 import { BooksService } from 'src/app/services/books.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { BooksService } from 'src/app/services/books.service';
 })
 export class RegisterComponent implements OnInit {
 
-  book: Books = new Books();
+  book: Book = new Book();
 
 
   constructor(private service: BooksService, private router: Router) { }

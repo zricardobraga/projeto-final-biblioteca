@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import BooksSchema from "../models/BooksSchema";
 import booksSchema from "../models/BooksSchema";
 import BorrowSchema from "../models/BorrowSchema";
 
@@ -50,10 +49,7 @@ class BorrowController {
             const borrowsList = await BorrowSchema.find()
             .populate('booksBorrow')
             .populate('studentBorrow');
-            response.status(200).json({
-                object: borrowsList,
-                msg: "Successfully listed"
-            });
+            response.status(200).json(borrowsList);
         }
         catch(error)
         {

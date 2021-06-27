@@ -1,6 +1,3 @@
-import { BorrowListComponent } from './components/views/borrow/borrowList/BorrowList.component';
-import { BorrowEditComponent } from './components/views/borrow/borrowEdit/BorrowEdit.component';
-import { BorrowRegisterComponent } from './components/views/borrow/borrowRegister/borrowRegister.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar'; 
 
 /* Component */
 import { AppComponent } from './app.component';
@@ -27,6 +25,9 @@ import { ContentComponent } from './components/template/content/content.componen
 import { ListComponent } from './components/views/books/list/list.component';
 import { RegisterComponent } from './components/views/books/register/register.component';
 import { EditComponent } from './components/views/books/edit/edit.component';
+import { BorrowRegisterComponent } from './components/views/borrow/borrowRegister/borrowRegister.component';
+import { BorrowListComponent } from './components/views/borrow/borrowList/borrowList.component';
+import { BorrowEditComponent } from './components/views/borrow/borrowEdit/borrowEdit.component';
 
 
 @NgModule({
@@ -39,8 +40,8 @@ import { EditComponent } from './components/views/books/edit/edit.component';
     RegisterComponent,
     EditComponent,
     BorrowRegisterComponent,
-    BorrowEditComponent,
-    BorrowListComponent
+    BorrowListComponent,
+    BorrowEditComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +58,8 @@ import { EditComponent } from './components/views/books/edit/edit.component';
     MatIconModule,
     MatCardModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
