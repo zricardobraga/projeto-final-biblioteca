@@ -1,0 +1,23 @@
+mat-card-title {
+    padding-bottom: 10px;
+}
+
+mat-form-field {
+    display: block;
+    width: 30%;
+}
+
+button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button_list {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+}

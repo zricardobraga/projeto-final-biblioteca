@@ -24,36 +24,42 @@ import { ContentComponent } from './components/template/content/content.componen
 import { ListComponent } from './components/views/books/list/list.component';
 import { RegisterComponent } from './components/views/books/register/register.component';
 import { EditComponent } from './components/views/books/edit/edit.component';
+import { StudentRegisterComponent } from './components/views/students/register/register.component';
+import { StudentListComponent } from './components/views/students/list/list.component';
+import { StudentEditComponent } from './components/views/students/edit/edit.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavComponent,
-    HeaderComponent,
-    ContentComponent,
-    ListComponent,
-    RegisterComponent,
-    EditComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatTableModule,
-    MatFormFieldModule,
-    FormsModule,
-    MatIconModule,
-    MatCardModule,
-    MatInputModule,
-    MatSelectModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavComponent,
+        HeaderComponent,
+        ContentComponent,
+        ListComponent,
+        RegisterComponent,
+        EditComponent,
+        StudentRegisterComponent,
+        StudentListComponent,
+        StudentEditComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatListModule,
+        MatTableModule,
+        MatFormFieldModule,
+        FormsModule,
+        MatIconModule,
+        MatCardModule,
+        MatInputModule,
+        MatSelectModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

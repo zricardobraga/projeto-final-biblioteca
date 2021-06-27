@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+}
+
+.btn-cadastrar {
+    position: relative;
+    left: 885px;
+}
+
+.title_list {
+    text-align: center;
+}
