@@ -29,11 +29,8 @@ class BorrowController {
 
             const borrow = await BorrowSchema.create(request.body);
 
-            await BorrowSchema.findOne({_id: borrow.id})
-            response.status(200).json({
-                object: borrow,
-                msg: "Successfully registered"
-            });
+            await BorrowSchema.findOne({_id: borrow.id});
+            response.status(200).json(borrow);
             
         }
         catch (error) {
@@ -50,10 +47,7 @@ class BorrowController {
             const borrowsList = await BorrowSchema.find()
             .populate('booksBorrow')
             .populate('studentBorrow');
-            response.status(200).json({
-                object: borrowsList,
-                msg: "Successfully listed"
-            });
+            response.status(200).json(borrowsList);
         }
         catch(error)
         {
@@ -74,10 +68,7 @@ class BorrowController {
 
             if(borrowFound)
             {
-                response.status(200).json({
-                    object: borrowFound,
-                    msg: "Borrow successfully found"
-                });
+                response.status(200).json(borrowFound);
             } else {
                 response.status(404).json({
                     msg: "Borrow not found"

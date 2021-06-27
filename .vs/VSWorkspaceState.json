@@ -1,16 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\API",
-    "\\API\\controllers",
-    "\\WEB",
-    "\\WEB\\src",
-    "\\WEB\\src\\app",
-    "\\WEB\\src\\app\\components",
-    "\\WEB\\src\\app\\components\\views",
-    "\\WEB\\src\\app\\models",
-    "\\WEB\\src\\app\\services"
+    "\\API\\src",
+    "\\Front\\src",
+    "\\Front\\src\\app",
+    "\\Front\\src\\app\\components",
+    "\\Front\\src\\app\\components\\views",
+    "\\Front\\src\\app\\components\\views\\books",
+    "\\Front\\src\\app\\components\\views\\books\\list"
   ],
-  "SelectedNode": "\\WEB\\src\\app\\components\\views\\books\\list\\list.component.ts",
   "PreviewInSolutionExplorer": false
 }

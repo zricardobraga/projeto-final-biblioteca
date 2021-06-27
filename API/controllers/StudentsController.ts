@@ -24,10 +24,7 @@ class StudentsController {
     {
         try {
             const studentsList = await StudentsSchema.find();
-            response.status(200).json({
-                object: studentsList,
-                msg: "Successfully listed"
-            });
+            response.status(200).json(studentsList);
         }
         catch(error)
         {
@@ -44,10 +41,7 @@ class StudentsController {
         try {
             const { cpf } = request.params;
             const studentFound = await StudentsSchema.find({ cpf: cpf});
-            response.status(200).json({
-                object: studentFound,
-                msg: "Student successfully found"
-            });
+            response.status(200).json(studentFound);
         }
         catch(error)
         {

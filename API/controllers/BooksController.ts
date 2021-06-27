@@ -39,10 +39,7 @@ class BooksController {
         try {
             const { cod } = request.params;
             const bookFound = await BooksSchema.find({ cod: cod});
-            response.status(200).json({
-                object: bookFound,
-                msg: "Book successfully found"
-            });
+            response.status(200).json(bookFound);
         }
         catch(error)
         {
