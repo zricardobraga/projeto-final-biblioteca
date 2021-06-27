@@ -21,7 +21,7 @@ export class StudentsService {
   }
 
   editar(student: Student): Observable<Student>{
-    return this.http.put<Student>(`${this.baseURL}library/students/edit/:id`, student);
+    return this.http.put<Student>(`${this.baseURL}library/students/edit/`, student);
  }
 
  deletar(_id: string): Observable<Student> {
