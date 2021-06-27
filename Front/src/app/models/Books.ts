@@ -1,6 +1,6 @@
 export class Books { 
-    _id?: string;
+    id?: string;
     cod!: string;
     title!: string;
-    isAvailable!: boolean;
+    isAvailable!: boolean
 };

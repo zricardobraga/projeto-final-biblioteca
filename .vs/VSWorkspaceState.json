@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\API",
-    "\\API\\src",
-    "\\API\\src\\models",
-    "\\Front\\src",
-    "\\Front\\src\\app",
-    "\\Front\\src\\app\\components",
-    "\\Front\\src\\app\\components\\views",
-    "\\Front\\src\\app\\components\\views\\books",
-    "\\Front\\src\\app\\components\\views\\books\\register"
+    ""
   ],
-  "SelectedNode": "\\API\\src\\models\\BooksSchema.ts",
+  "SelectedNode": "\\Front",
   "PreviewInSolutionExplorer": false
 }

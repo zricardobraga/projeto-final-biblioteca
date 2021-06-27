@@ -12,11 +12,20 @@ export class BooksService {
 
   constructor(private http: HttpClient) { }
 
+  getBook(cod: string): Observable<Books> {
+    return this.http.get<Books>(`${this.baseUrl}library/books/search/${cod}`);
+  }
+
   list(): Observable<Books[]> {
     return this.http.get<Books[]>(`${this.baseUrl}library/books/list`);
   }
 
   register(book: Books): Observable<Books> {
     return this.http.post<Books>(`${this.baseUrl}library/books/register`, book);
+  }
+
+  edit(id: string, request: Books) : Observable<Books> {
+    const path = `${this.baseUrl}library/books/edit/${id}`;
+    return this.http.put<Books>(path, request);
   }
 }

@@ -23,7 +23,7 @@
   <ng-container matColumnDef="acoes">
     <th mat-header-cell *matHeaderCellDef> Ações </th>
     <td mat-cell *matCellDef="let book">
-      <a routerLink="/register/list/edit/">
+      <a routerLink="/register/list/edit/{{book.cod}}">
         <button mat-raised-button color="primary">Editar</button>
       </a>
       <a class="margin_acoes" routerLink="">

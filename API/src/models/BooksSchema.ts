@@ -16,8 +16,7 @@ const booksSchema = new Schema(
             required: [true, "The field STATUS is mandatory"],
             default: true,
         }
-        },
-    }, 
+    }
 );
 
 export default mongoose.model("Books", booksSchema);

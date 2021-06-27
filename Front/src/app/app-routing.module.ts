@@ -8,7 +8,7 @@ import { RegisterComponent } from './components/views/books/register/register.co
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'register/list', component: ListComponent },
-  { path: 'register/list/edit', component: EditComponent}
+  { path: 'register/list/edit/:cod', component: EditComponent}
 
 ];
 
