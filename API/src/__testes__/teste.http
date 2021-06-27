@@ -43,7 +43,7 @@ GET http://localhost:3000/library/books/list
 GET http://localhost:3000/library/books/search/002
 
 ###
-POST http://localhost:3000/library/books/edit/11
+PUT  http://localhost:3000/library/books/edit/11
 
 {   
     "cod": "10",
@@ -52,7 +52,7 @@ POST http://localhost:3000/library/books/edit/11
 }
 
 ###
-POST http://localhost:3000/library/books/delete/11
+DELETE  http://localhost:3000/library/books/delete/11
 
 
 ###

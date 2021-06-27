@@ -12,13 +12,13 @@ export class RegisterComponent implements OnInit {
 
   book: Books = new Books();
 
-
   constructor(private service: BooksService, private router: Router) { }
 
   ngOnInit(): void {}
 
   register(): void {
     this.service.register(this.book).subscribe((book) => {
+      alert('Livro Cadastrado com sucesso');
       this.router.navigate(['register/list']);
     });
   }
