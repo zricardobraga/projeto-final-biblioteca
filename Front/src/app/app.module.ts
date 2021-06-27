@@ -34,7 +34,7 @@ import { EditComponent } from './components/views/books/edit/edit.component';
     ContentComponent,
     ListComponent,
     RegisterComponent,
-    EditComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

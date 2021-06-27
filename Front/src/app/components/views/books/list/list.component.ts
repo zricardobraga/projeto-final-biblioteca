@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Books } from 'src/app/models/Books';
 import { BooksService } from 'src/app/services/books.service';
 
@@ -13,15 +14,20 @@ export class ListComponent implements OnInit {
   book!: MatTableDataSource<Books>;
   displayedColumns: string[] = [ 'status', 'cod', 'title', 'acoes'];
 
-  //book: Books[] = [];
-
-  constructor(private service: BooksService) {}
+  constructor(private service: BooksService, private router: Router) {}
 
   ngOnInit(): void {
     this.service.list().subscribe((book) => {
       this.book = new MatTableDataSource<Books>(book);
-      //this.book = book;
-      console.log(book);
      });
+  }
+
+  delete(_id: string): void {
+    this.service.delete(_id).subscribe((book) => {
+      this.book = new MatTableDataSource<Books>(book);
+      this.router.navigate(['register/list']);
+      this.ngOnInit();
+    });
+    alert("Livro deletado com sucesso!");
   }
 }

@@ -17,7 +17,7 @@ router.post("/library/books/register", booksController.registerBook);
 router.get("/library/books/list", booksController.listBooks);
 router.get("/library/books/search/:cod", booksController.findBookByCod);
 router.put("/library/books/edit/:id", booksController.editBook);
-router.post("/library/books/delete/:id", booksController.deleteBook);
+router.delete("/library/books/delete/:id", booksController.deleteBook);
 
 const borrowController = new BorrowController();
 router.post("/library/borrow/register", borrowController.borrowRegister);

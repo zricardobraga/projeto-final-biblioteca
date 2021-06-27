@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Books } from 'src/app/models/Books';
+import { BooksService } from 'src/app/services/books.service';
 
 @Component({
   selector: 'app-edit',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditComponent implements OnInit {
 
-  constructor() { }
+  book: Books = new Books();
+  
+  constructor(private service: BooksService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  edit(): void {
+    this.service.edit(this.book).subscribe(() => {
+     console.log(this.book)
+    })
   }
-
 }
