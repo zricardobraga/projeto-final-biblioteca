@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Student } from 'src/app/models/Student';
 import { StudentsService } from 'src/app/services/students.service';
 
@@ -20,5 +22,6 @@ export class ListarComponent implements OnInit {
       console.log(this.students);
     });
   }
+  
 
 }
