@@ -23,5 +23,10 @@ export class StudentsService {
   editar(student: Student): Observable<Student>{
     return this.http.put<Student>(`${this.baseURL}library/students/edit/:id`, student);
  }
+
+ deletar(_id: string): Observable<Student> {
+  return this.http.delete<Student>(`${this.baseURL}library/students/delete/${_id}`);
+}
+
 } 
 
