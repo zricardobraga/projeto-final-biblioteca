@@ -21,9 +21,17 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { ContentComponent } from './components/template/content/content.component';
+
+/*Book*/
 import { ListComponent } from './components/views/books/list/list.component';
 import { RegisterComponent } from './components/views/books/register/register.component';
 import { EditComponent } from './components/views/books/edit/edit.component';
+
+/*Student */
+import { StudentslistComponent } from './components/views/students/studentslist/studentslist.component';
+import { StudentsregisterComponent } from './components/views/students/studentsregister/studentsregister.component';
+import { StudentseditComponent } from './components/views/students/studentsedit/studentsedit.component';
+import { HomeComponent } from './components/template/home/home.component';
 
 
 @NgModule({
@@ -34,7 +42,11 @@ import { EditComponent } from './components/views/books/edit/edit.component';
     ContentComponent,
     ListComponent,
     RegisterComponent,
-    EditComponent
+    EditComponent,
+    StudentslistComponent,
+    StudentsregisterComponent,
+    StudentseditComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

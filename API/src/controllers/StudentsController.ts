@@ -24,10 +24,7 @@ class StudentsController {
     {
         try {
             const studentsList = await StudentsSchema.find();
-            response.status(200).json({
-                object: studentsList,
-                msg: "Successfully listed"
-            });
+            response.status(200).json(studentsList);
         }
         catch(error)
         {

@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   register(): void {
     this.service.register(this.book).subscribe((book) => {
       alert('Livro Cadastrado com sucesso');
-      this.router.navigate(['register/list']);
+      this.router.navigate(['register/books/list']);
     });
   }
 }

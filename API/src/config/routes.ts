@@ -10,7 +10,7 @@ router.post("/library/students/register", studentsControllers.studentsRegister);
 router.get("/library/students/list", studentsControllers.listStudents);
 router.get("/library/students/search/:cpf", studentsControllers.findStudentByCpf);
 router.put("/library/students/edit/:id", studentsControllers.editStudent);
-router.post("/library/students/delete/:id", studentsControllers.deleteStudent);
+router.delete("/library/students/delete/:id", studentsControllers.deleteStudent);
 
 const booksController = new BooksController();
 router.post("/library/books/register", booksController.registerBook);

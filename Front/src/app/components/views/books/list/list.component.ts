@@ -25,7 +25,7 @@ export class ListComponent implements OnInit {
   delete(_id: string): void {
     this.service.delete(_id).subscribe((book) => {
       this.book = new MatTableDataSource<Books>(book);
-      this.router.navigate(['register/list']);
+      this.router.navigate(['register/books/list']);
       this.ngOnInit();
     });
     alert("Livro deletado com sucesso!");

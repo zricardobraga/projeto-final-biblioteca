@@ -24,7 +24,7 @@ POST http://localhost:3000/library/students/edit/123.456.789-10
 }
 
 ###
-POST http://localhost:3000/library/students/delete/123.456.789-10
+DELETE  http://localhost:3000/library/students/delete/0124
 
 ###
 POST http://localhost:3000/library/books/register

@@ -18,11 +18,11 @@ export class BooksService {
 
   register(book: Books): Observable<Books> {
     return this.http.post<Books>(`${this.baseUrl}library/books/register`, book);
-  }
-
-  edit(book: Books): Observable<Books> {
-    return this.http.put<Books>(`${this.baseUrl}library/books/edit`, book);
-  }
+  } 
+  
+  // edit(book: Books): Observable<Books> {
+  //   return this.http.put<Books>(`${this.baseUrl}library/books/edit`, book);
+  // }
 
   delete(_id: string): Observable<Books[]> {
     return this.http.delete<Books[]>(`${this.baseUrl}library/books/delete/${_id}`);
