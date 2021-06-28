@@ -27,6 +27,9 @@ import { EditComponent } from './components/views/books/edit/edit.component';
 import { StudentRegisterComponent } from './components/views/students/register/register.component';
 import { StudentListComponent } from './components/views/students/list/list.component';
 import { StudentEditComponent } from './components/views/students/edit/edit.component';
+import { BorrowRegisterComponent } from './components/views/borrow/register/borrowRegister.component';
+import { BorrowListComponent } from './components/views/borrow/list/BorrowList.component';
+import { BorrowEditComponent } from './components/views/borrow/edit/BorrowEdit.component';
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import { StudentEditComponent } from './components/views/students/edit/edit.comp
         EditComponent,
         StudentRegisterComponent,
         StudentListComponent,
-        StudentEditComponent
+        StudentEditComponent,
+        BorrowRegisterComponent,
+        BorrowListComponent,
+        BorrowEditComponent
     ],
     imports: [
         BrowserModule,

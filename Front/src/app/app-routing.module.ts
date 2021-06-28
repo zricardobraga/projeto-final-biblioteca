@@ -9,20 +9,30 @@ import { StudentRegisterComponent } from './components/views/students/register/r
 import { StudentListComponent } from './components/views/students/list/list.component';
 import { StudentEditComponent } from './components/views/students/edit/edit.component';
 
+import { BorrowEditComponent } from './components/views/borrow/edit/BorrowEdit.component';
+import { BorrowListComponent } from './components/views/borrow/list/BorrowList.component';
+import { BorrowRegisterComponent } from './components/views/borrow/register/borrowRegister.component';
+
 const routes: Routes = [
-   //Book
+    //Book
     { path: 'register', component: RegisterComponent },
     { path: 'register/list', component: ListComponent },
     { path: 'register/list/edit/:cod', component: EditComponent },
 
-  //Student
+    //Student
     { path: 'library/students/list', component: StudentListComponent },
     { path: 'library/students/register', component: StudentRegisterComponent },
-    { path: 'library/students/edit', component: StudentEditComponent }
+    { path: 'library/students/edit/:cpf', component: StudentEditComponent },
+
+    //Borrow
+    { path: 'borrow/borrowRegister', component: BorrowRegisterComponent },
+    { path: 'borrow/borrowRegister/borrowList', component: BorrowListComponent },
+    { path: 'borrow/borrowList/borrowEdit/:id', component: BorrowEditComponent },
+    //'borrow/borrowEdit/:id'
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

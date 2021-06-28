@@ -1,13 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\API\\src",
+    "\\Front",
     "\\Front\\src",
     "\\Front\\src\\app",
     "\\Front\\src\\app\\components",
     "\\Front\\src\\app\\components\\views",
     "\\Front\\src\\app\\components\\views\\books",
-    "\\Front\\src\\app\\components\\views\\books\\list"
+    "\\Front\\src\\app\\components\\views\\books\\register",
+    "\\Front\\src\\app\\components\\views\\borrow",
+    "\\Front\\src\\app\\components\\views\\students",
+    "\\Front\\src\\app\\components\\views\\students\\register"
   ],
+  "SelectedNode": "\\Front\\src\\app\\components\\views\\borrow\\register\\borrowRegister.component.ts",
   "PreviewInSolutionExplorer": false
 }

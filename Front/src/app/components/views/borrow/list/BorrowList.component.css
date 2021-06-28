@@ -1,0 +1,12 @@
+table {
+    margin-top: 16px;
+    width: 100%;
+}
+
+mat-icon{
+    margin-right: 8px;
+}
+
+.title_list {
+    text-align: center;
+  }
