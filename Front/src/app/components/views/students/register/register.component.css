@@ -1,19 +1,10 @@
-mat-card-title {
-    padding-bottom: 10px;
+mat-card-content {
+    padding: 5px;
 }
 
-mat-form-field {
+.example-full-width {
+    width: 60%;
     display: block;
-    width: 30%;
-}
-
-button {
-    display: block;
-    margin-bottom: 10px;
-}
-
-a {
-    text-decoration: none;
 }
 
 .button_list {

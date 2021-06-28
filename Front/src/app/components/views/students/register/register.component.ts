@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Student } from 'src/app/models/Students';
 import { StudentsService } from 'src/app/services/students.service';
 
@@ -9,22 +10,16 @@ import { StudentsService } from 'src/app/services/students.service';
 })
 export class StudentRegisterComponent implements OnInit {
 
-    name!: string;
-    cpf!: string;
-    address!: string;
+    student: Student = new Student();
 
-    constructor(private service: StudentsService) { }
+    constructor(private service: StudentsService, private router: Router) { }
 
-    ngOnInit(): void {
-    }
+    ngOnInit(): void { }
 
     register(): void {
-        let student = new Student();
-        student.name = (this.name);
-        student.cpf = (this.cpf);
-        student.address = (this.address);
-        this.service.cadastrar(student).subscribe((student) => {
-            console.log(student);
+        this.service.cadastrar(this.student).subscribe((student) => {
+            alert('Estudante Cadastrado com sucesso');
+            this.router.navigate(['register/students/list']);
         });
     }
 

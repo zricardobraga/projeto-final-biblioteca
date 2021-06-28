@@ -30,6 +30,7 @@ import { StudentEditComponent } from './components/views/students/edit/edit.comp
 import { BorrowRegisterComponent } from './components/views/borrow/register/borrowRegister.component';
 import { BorrowListComponent } from './components/views/borrow/list/BorrowList.component';
 import { BorrowEditComponent } from './components/views/borrow/edit/BorrowEdit.component';
+import { HomeComponent } from './components/template/home/home.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { BorrowEditComponent } from './components/views/borrow/edit/BorrowEdit.c
         StudentEditComponent,
         BorrowRegisterComponent,
         BorrowListComponent,
-        BorrowEditComponent
+        BorrowEditComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,

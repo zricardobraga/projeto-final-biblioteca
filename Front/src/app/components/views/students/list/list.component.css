@@ -1,17 +1,16 @@
 table {
+    margin-top: 16px;
     width: 100%;
-    text-align: center;
 }
 
-button {
-    margin: 5px;
-}
-
-.btn-cadastrar {
-    position: relative;
-    left: 885px;
+mat-icon {
+    margin-right: 8px;
 }
 
 .title_list {
     text-align: center;
+}
+
+.margin_acoes {
+    margin-left: 10px;
 }

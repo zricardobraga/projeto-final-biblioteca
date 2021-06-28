@@ -7,11 +7,8 @@
     "\\Front\\src\\app\\components",
     "\\Front\\src\\app\\components\\views",
     "\\Front\\src\\app\\components\\views\\books",
-    "\\Front\\src\\app\\components\\views\\books\\register",
-    "\\Front\\src\\app\\components\\views\\borrow",
-    "\\Front\\src\\app\\components\\views\\students",
-    "\\Front\\src\\app\\components\\views\\students\\register"
+    "\\Front\\src\\app\\components\\views\\books\\register"
   ],
-  "SelectedNode": "\\Front\\src\\app\\components\\views\\borrow\\register\\borrowRegister.component.ts",
+  "SelectedNode": "\\Front\\src\\app\\components\\views\\books\\register\\register.component.ts",
   "PreviewInSolutionExplorer": false
 }

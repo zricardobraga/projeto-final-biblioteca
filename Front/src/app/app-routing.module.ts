@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { HomeComponent } from './components/template/home/home.component';
+
 import { EditComponent } from './components/views/books/edit/edit.component';
 import { ListComponent } from './components/views/books/list/list.component';
 import { RegisterComponent } from './components/views/books/register/register.component';
@@ -14,15 +16,17 @@ import { BorrowListComponent } from './components/views/borrow/list/BorrowList.c
 import { BorrowRegisterComponent } from './components/views/borrow/register/borrowRegister.component';
 
 const routes: Routes = [
+
+    {path: '', component: HomeComponent},
     //Book
     { path: 'register', component: RegisterComponent },
     { path: 'register/list', component: ListComponent },
     { path: 'register/list/edit/:cod', component: EditComponent },
 
     //Student
-    { path: 'library/students/list', component: StudentListComponent },
-    { path: 'library/students/register', component: StudentRegisterComponent },
-    { path: 'library/students/edit/:cpf', component: StudentEditComponent },
+    { path: 'register/students', component: StudentRegisterComponent },
+    { path: 'register/students/list', component: StudentListComponent },
+    { path: 'register/students/list/edit/:cpf', component: StudentEditComponent },
 
     //Borrow
     { path: 'borrow/borrowRegister', component: BorrowRegisterComponent },

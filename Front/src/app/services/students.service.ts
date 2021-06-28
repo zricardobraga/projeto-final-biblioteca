@@ -19,4 +19,8 @@ export class StudentsService {
     cadastrar(student: Student): Observable<Student> {
         return this.http.post<Student>(`${this.baseURL}library/students/register`, student);
     }
+
+    delete(_id: string): Observable<Student[]> {
+        return this.http.delete<Student[]>(`${this.baseURL}library/students/delete/${_id}`);
+    }
 }
