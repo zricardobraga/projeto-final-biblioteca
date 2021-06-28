@@ -25,6 +25,6 @@ router.get("/library/borrow/list", borrowController.listBorrows);
 router.get("/library/borrow/search/:id", borrowController.findBorrowById);
 router.put("/library/borrow/edit/:id", borrowController.editBorrow);
 router.delete("/library/borrow/delete/:id", borrowController.deleteBorrow);
-router.get("/library/borrow/devolution/:id", borrowController.devolutionBorrow);
+router.post("/library/borrow/devolution/:id", borrowController.devolutionBorrow);
 
 export { router };

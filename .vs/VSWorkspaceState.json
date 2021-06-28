@@ -5,10 +5,12 @@
     "\\Front\\src",
     "\\Front\\src\\app",
     "\\Front\\src\\app\\components",
+    "\\Front\\src\\app\\components\\template",
+    "\\Front\\src\\app\\components\\template\\content",
     "\\Front\\src\\app\\components\\views",
     "\\Front\\src\\app\\components\\views\\books",
     "\\Front\\src\\app\\components\\views\\books\\register"
   ],
-  "SelectedNode": "\\Front\\src\\app\\components\\views\\books\\register\\register.component.ts",
+  "SelectedNode": "\\Front\\src\\app\\app-routing.module.ts",
   "PreviewInSolutionExplorer": false
 }
